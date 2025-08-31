@@ -1,7 +1,7 @@
 # DESIGN-E-ARQUITETURA-DE-SOFTWARE
 Repositório da disciplina de Design e Arquitetura de Software (Univille/2025). Contém resumos, estudos e exercícios sobre princípios, padrões arquiteturais (camadas, MVC, microserviços), atributos de qualidade e boas práticas no desenvolvimento de software.
 
-# Aula 01 – Design e Arquitetura de Software
+# Aula 00 – Design e Arquitetura de Software
 ## Anotações da Aula
 
 - Disciplina voltada para **conceitos de design e arquitetura de software**.  
