@@ -119,3 +119,38 @@ A aula iniciou com uma revisão dos conceitos anteriores, como **ocultamento de 
 ### Introdução aos Princípios SOLID
 * SOLID é um acrônimo para cinco princípios de design de software que ajudam a criar sistemas mais compreensíveis, flexíveis e manuteníveis.
 * O primeiro princípio, **"S" - Single Responsibility Principle (Princípio da Responsabilidade Única)**, é a aplicação direta do conceito de **alta coesão**.
+
+# Aula 03 - 07/08/2025
+
+A aula iniciou com a revisão dos conceitos de **alta coesão** e **baixo acoplamento** como objetivos centrais na construção de software. O foco principal foi a introdução e o aprofundamento nos dois primeiros princípios do **SOLID**.
+
+## Tópicos Principais
+
+### Introdução ao SOLID
+* SOLID é um acrônimo para cinco princípios de design para software orientado a objetos, popularizados por **Robert Martin (Uncle Bob)**.
+* Seguir estes princípios ajuda a criar um código mais limpo, manutenível e flexível. Em resumo, é "programar orientado a objetos do jeito certo".
+
+---
+
+### S - Princípio da Responsabilidade Única (SRP)
+* Este princípio é a aplicação direta do conceito de **alta coesão**.
+* Afirma que uma classe deve ter apenas **um, e somente um, motivo para mudar**.
+* A arquitetura em camadas utilizada anteriormente (`entity`, `service`, `controller`) é um exemplo prático, onde cada camada possui uma responsabilidade clara e única.
+
+---
+
+### I - Princípio da Segregação de Interfaces (ISP)
+* O princípio defende que é melhor ter **várias interfaces pequenas e específicas** do que uma única interface grande e genérica.
+* O objetivo é evitar que uma classe seja obrigada a implementar métodos que ela não utiliza.
+* **Exemplo prático:** Em vez de uma única interface para todos os eventos de UI, foram usadas interfaces segregadas:
+    * `ActionListener`: Exclusiva para tratar eventos de clique.
+    * `MouseMotionListener`: Exclusiva para tratar eventos de movimento do mouse.
+
+---
+
+### Aplicando os Princípios em Conjunto
+* Foi demonstrado que, embora o uso de interfaces separadas atendesse ao **ISP**, a classe da Janela (`JFrame`) passou a ter múltiplas responsabilidades (desenhar a tela e tratar a lógica dos eventos), violando o **SRP**.
+* A solução foi refatorar o código, criando uma classe `Controlador` separada para conter a lógica e implementar as interfaces.
+* **Resultado Final:**
+    * A classe `Janelinha` ficou apenas com a responsabilidade de montar e exibir a interface.
+    * A classe `Controlador` ficou com a responsabilidade de gerenciar a lógica dos eventos, respeitando ambos os princípios.
