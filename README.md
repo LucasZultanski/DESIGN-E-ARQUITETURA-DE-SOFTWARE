@@ -292,3 +292,29 @@ A aula foi focada na implementação do padrão **Observer** a partir de seu dia
 ### Introdução ao Padrão Estrutural: Adapter
 * **Intenção:** Atua como um "tradutor" que permite a colaboração entre objetos com interfaces incompatíveis.
 * **Exemplo Moderno:** Um **API Gateway** pode funcionar como um Adapter, convertendo requisições de um formato (ex: XML) para outro (ex: JSON) para integrar sistemas legados com APIs modernas. **Kong** foi mencionado como um exemplo de tecnologia que implementa este padrão.
+
+# Aula 9- 28/08/2025
+
+Esta aula iniciou uma nova fase da disciplina, movendo o foco do nível do código para uma visão mais ampla sobre como definir uma arquitetura de software. Foram apresentados os três pilares que guiam este processo.
+
+## Tópicos Principais
+
+### Pilar 1: Características da Arquitetura (Requisitos Não Funcionais)
+* **Definição:** São os atributos de qualidade que um sistema deve ter, como desempenho, segurança e escalabilidade. São equivalentes aos **requisitos não funcionais**.
+* **Trade-offs:** Um sistema não pode ser perfeito em todas as características. É papel do arquiteto priorizar as mais importantes para o projeto, fazendo concessões (*trade-offs*).
+* **Exemplo - Segurança:** Foi discutido o desafio da **segurança na cadeia de suprimentos de software (supply chain)**, que é a dependência de bibliotecas de código aberto que podem conter vulnerabilidades.
+
+---
+
+### Pilar 2: Decisões de Arquitetura
+* **Definição:** É o processo de escolher a estrutura fundamental do sistema (ex: arquitetura em camadas, microsserviços) e as tecnologias a serem usadas.
+* **Influência:** Essas decisões são fortemente influenciadas pela experiência e conhecimento da equipe, que tende a optar por tecnologias que já domina para ser mais produtiva.
+
+---
+
+### Pilar 3: Princípios de Design
+* **Definição:** São as diretrizes que governam a implementação da arquitetura, garantindo que as decisões e características sejam respeitadas.
+* **Exemplo com Microsserviços:**
+    * **Decisão:** Usar microsserviços.
+    * **Característica:** Baixo acoplamento.
+    * **Princípio de Design:** Para manter o baixo acoplamento, os microsserviços não devem compartilhar o mesmo banco de dados. Em vez disso, devem usar **comunicação assíncrona** (um sistema de mensagens, aplicando o padrão Observer em nível de arquitetura), onde um serviço publica um evento e outros o consomem de forma independente.
