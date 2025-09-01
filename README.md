@@ -179,7 +179,7 @@ Esta aula concluiu o estudo dos **Princípios SOLID**, focando nos três pilares
 * **Na prática:** É possível adicionar novas funcionalidades a uma classe sem alterar seu código-fonte.
 * **Exemplo:** A customização de um `JTable` foi usada para ilustrar o conceito. Não modificamos a classe `JTable`. Em vez disso, **estendemos** seu comportamento ao fornecer uma implementação de `AbstractTableModel`, adicionando a lógica de exibição de dados de forma segura e desacoplada.
 
-# Resumo da Aula de Arquitetura de Software - 14/08/2025
+# Aula 6- 14/08/2025
 
 Esta aula concluiu o estudo dos **Princípios SOLID**, com foco no último princípio: a Substituição de Liskov.
 
@@ -208,7 +208,7 @@ Esta aula concluiu o estudo dos **Princípios SOLID**, com foco no último princ
 ### Conclusão sobre SOLID
 * Com a exploração do LSP, finalizamos o estudo dos cinco princípios SOLID. Uma arquitetura de software robusta e manutenível deve se esforçar para aplicar esses conceitos.
 
-# Aula 5- 18/08/2025
+# Aula 7- 18/08/2025
 
 Após uma breve revisão do Princípio da Substituição de Liskov (LSP), a aula introduziu o conceito de **Padrões de Projeto (Design Patterns)** e implementou o primeiro deles: o Singleton.
 
