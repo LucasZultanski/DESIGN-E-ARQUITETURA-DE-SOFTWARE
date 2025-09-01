@@ -207,3 +207,33 @@ Esta aula concluiu o estudo dos **Princípios SOLID**, com foco no último princ
 
 ### Conclusão sobre SOLID
 * Com a exploração do LSP, finalizamos o estudo dos cinco princípios SOLID. Uma arquitetura de software robusta e manutenível deve se esforçar para aplicar esses conceitos.
+
+# Aula 5- 18/08/2025
+
+Após uma breve revisão do Princípio da Substituição de Liskov (LSP), a aula introduziu o conceito de **Padrões de Projeto (Design Patterns)** e implementou o primeiro deles: o Singleton.
+
+## Tópicos Principais
+
+### Introdução aos Padrões de Projeto
+* **Definição:** São soluções padronizadas para problemas recorrentes no design de software orientado a objetos.
+* **Objetivo:** Reutilizar soluções comprovadas para aumentar a flexibilidade e a manutenibilidade do código.
+* **Categorias:** Criacionais, Estruturais e Comportamentais.
+
+---
+
+### Padrão Criacional: Singleton
+* **Intenção:** Garantir que uma classe tenha **uma, e somente uma, instância**, e fornecer um ponto de acesso global para ela.
+
+* **Implementação Chave:**
+    * **Construtor Privado:** `private Singleton()`
+        * Impede a instanciação da classe através do operador `new` por qualquer código externo.
+    * **Instância Estática Privada:** `private static Singleton instance;`
+        * Cria uma única variável que pertence à classe em si, não a um objeto individual. É o "recipiente" para a instância única.
+    * **Método de Acesso Estático Público:** `public static Singleton getInstance()`
+        * É a única forma de obter a instância da classe.
+        * Na primeira chamada, ele cria o objeto (`new Singleton()`) e o armazena na variável estática.
+        * Nas chamadas seguintes, ele simplesmente retorna a instância já criada, garantindo que ela seja sempre a mesma.
+
+* **Uso e Advertência:**
+    * O Singleton é útil para gerenciar recursos compartilhados (ex: configurações, pools de conexão).
+    * No entanto, é frequentemente considerado um **anti-padrão**, pois cria um estado global que pode levar a um alto acoplamento no sistema e dificultar a realização de testes unitários. Deve ser usado com moderação.
