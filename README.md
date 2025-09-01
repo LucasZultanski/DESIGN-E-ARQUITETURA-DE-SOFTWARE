@@ -154,3 +154,56 @@ A aula iniciou com a revisão dos conceitos de **alta coesão** e **baixo acopla
 * **Resultado Final:**
     * A classe `Janelinha` ficou apenas com a responsabilidade de montar e exibir a interface.
     * A classe `Controlador` ficou com a responsabilidade de gerenciar a lógica dos eventos, respeitando ambos os princípios.
+
+# Aula 4- 11/08/2025
+
+Esta aula concluiu o estudo dos **Princípios SOLID**, focando nos três pilares restantes: Inversão de Dependência, Substituição de Liskov e o Princípio do Aberto/Fechado.
+
+## Tópicos Principais
+
+### D - Princípio da Inversão de Dependência (DIP)
+* **Definição:** Componentes devem depender de **abstrações (interfaces)**, e não de implementações concretas.
+* **Na prática:** Isso desacopla o código. Em vez de um `Controller` conhecer o `ServiceImpl`, ele conhece apenas a interface `Service`. A implementação real é "injetada" em tempo de execução (ex: via `@Autowired` no Spring), permitindo que ela seja trocada sem quebrar o `Controller`.
+
+---
+
+### L - Princípio da Substituição de Liskov (LSP)
+* O tópico foi abordado sob a ótica de **"Prefira Composição à Herança"**.
+* **Herança:** Deve ser usada com cautela. Ela cria um forte acoplamento e pode ser difícil de modelar em bancos de dados. Use-a apenas quando as subclasses são totalmente distintas (a analogia "gato e cachorro").
+* **Composição/Associação:** É uma alternativa mais flexível, permitindo que objetos colaborem sem criar uma hierarquia rígida, resultando em um design mais robusto.
+
+---
+
+### O - Princípio do Aberto/Fechado (OCP)
+* **Definição:** O software deve ser **aberto para extensão, mas fechado para modificação**.
+* **Na prática:** É possível adicionar novas funcionalidades a uma classe sem alterar seu código-fonte.
+* **Exemplo:** A customização de um `JTable` foi usada para ilustrar o conceito. Não modificamos a classe `JTable`. Em vez disso, **estendemos** seu comportamento ao fornecer uma implementação de `AbstractTableModel`, adicionando a lógica de exibição de dados de forma segura e desacoplada.
+
+# Resumo da Aula de Arquitetura de Software - 14/08/2025
+
+Esta aula concluiu o estudo dos **Princípios SOLID**, com foco no último princípio: a Substituição de Liskov.
+
+## Tópicos Principais
+
+### Revisão dos Princípios Anteriores
+* A aula começou com uma rápida recapitulação dos princípios já vistos:
+    * **Inversão de Dependência (DIP):** Depender de abstrações (interfaces).
+    * **Composição sobre Herança:** Dar preferência a associações em vez de herança.
+    * **Lei de Demeter (LoD):** Limitar o conhecimento que um objeto tem sobre outros.
+    * **Aberto/Fechado (OCP):** Ser aberto para extensão, mas fechado para modificação.
+
+---
+
+### L - Princípio da Substituição de Liskov (LSP)
+* **Definição:** Este é o último princípio do acrônimo SOLID. Ele estabelece que objetos de uma superclasse devem ser substituíveis por objetos de suas subclasses sem afetar a integridade do programa.
+* **Na prática:** As classes filhas devem honrar o contrato estabelecido pela classe pai, mantendo a assinatura e o comportamento esperado dos métodos herdados. Isso garante que diferentes implementações de uma mesma abstração sejam intercambiáveis.
+* **Exemplo Prático (Java Swing):**
+    * Um `JPanel` foi criado para receber uma borda.
+    * Primeiro, foi aplicada uma `LineBorder`. O programa funcionou.
+    * Em seguida, a `LineBorder` foi substituída por uma `TitledBorder`. O programa continuou funcionando sem nenhuma alteração.
+    * **Conclusão:** Isso foi possível porque tanto `LineBorder` quanto `TitledBorder` herdam da mesma classe base (`AbstractBorder`) e respeitam seu contrato. Elas são, portanto, substituíveis entre si, demonstrando o LSP na prática.
+
+---
+
+### Conclusão sobre SOLID
+* Com a exploração do LSP, finalizamos o estudo dos cinco princípios SOLID. Uma arquitetura de software robusta e manutenível deve se esforçar para aplicar esses conceitos.
