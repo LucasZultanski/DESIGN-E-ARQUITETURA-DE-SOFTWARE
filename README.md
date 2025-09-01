@@ -179,7 +179,7 @@ Esta aula concluiu o estudo dos **Princípios SOLID**, focando nos três pilares
 * **Na prática:** É possível adicionar novas funcionalidades a uma classe sem alterar seu código-fonte.
 * **Exemplo:** A customização de um `JTable` foi usada para ilustrar o conceito. Não modificamos a classe `JTable`. Em vez disso, **estendemos** seu comportamento ao fornecer uma implementação de `AbstractTableModel`, adicionando a lógica de exibição de dados de forma segura e desacoplada.
 
-# Aula 6- 14/08/2025
+# Aula 5- 14/08/2025
 
 Esta aula concluiu o estudo dos **Princípios SOLID**, com foco no último princípio: a Substituição de Liskov.
 
@@ -208,7 +208,7 @@ Esta aula concluiu o estudo dos **Princípios SOLID**, com foco no último princ
 ### Conclusão sobre SOLID
 * Com a exploração do LSP, finalizamos o estudo dos cinco princípios SOLID. Uma arquitetura de software robusta e manutenível deve se esforçar para aplicar esses conceitos.
 
-# Aula 7- 18/08/2025
+# Aula 6- 18/08/2025
 
 Após uma breve revisão do Princípio da Substituição de Liskov (LSP), a aula introduziu o conceito de **Padrões de Projeto (Design Patterns)** e implementou o primeiro deles: o Singleton.
 
@@ -237,3 +237,33 @@ Após uma breve revisão do Princípio da Substituição de Liskov (LSP), a aula
 * **Uso e Advertência:**
     * O Singleton é útil para gerenciar recursos compartilhados (ex: configurações, pools de conexão).
     * No entanto, é frequentemente considerado um **anti-padrão**, pois cria um estado global que pode levar a um alto acoplamento no sistema e dificultar a realização de testes unitários. Deve ser usado com moderação.
+
+# Aula 7- 21/08/2025
+
+Esta aula consistiu em uma revisão prática e aprofundada do padrão **Singleton**, incluindo uma sessão de debugging para visualizar seu funcionamento, e a introdução de um novo desafio de implementação.
+
+## Tópicos Principais
+
+### Revisão e Analogia do Padrão Singleton
+* **Objetivo Principal:** Garantir que uma classe possua apenas **uma instância** em toda a aplicação.
+* **Analogia "Ender Chest":** O Singleton foi comparado a um "Ender Chest" do Minecraft. Não importa onde você o acesse no sistema, você sempre estará interagindo com o mesmo objeto e os mesmos dados.
+* **Pilares da Implementação:**
+    * `private constructor()`: Bloqueia a criação de instâncias externas.
+    * `private static Singleton instance`: Uma variável estática para guardar a única instância.
+    * `public static getInstance()`: Método de acesso que cria a instância apenas na primeira vez e a retorna em todas as chamadas subsequentes.
+
+---
+
+### Demonstração Prática e Debugging
+* Para dar um propósito ao Singleton, uma variável `segredo` foi adicionada para guardar uma informação.
+* Uma classe `Cliente` demonstrou o fluxo de uso:
+    1.  Obter a instância com `Singleton.getInstance()`.
+    2.  Salvar uma informação: `singleton.setSegredo(...)`.
+    3.  Em outro ponto do sistema, obter a instância novamente e recuperar a informação: `Singleton.getInstance().getSegredo()`.
+* Foi realizada uma sessão de **debugging** para executar o código passo a passo, mostrando como as variáveis são preenchidas na memória e provando que a instância do Singleton e a informação guardada nela permanecem as mesmas durante a execução.
+
+---
+
+### Novo Desafio: O Padrão Observer
+* A próxima tarefa para a turma é implementar o padrão de projeto **Observer** de forma autônoma.
+* O objetivo é praticar a habilidade de analisar um diagrama UML de um padrão e traduzir sua estrutura e lógica para código funcional.
