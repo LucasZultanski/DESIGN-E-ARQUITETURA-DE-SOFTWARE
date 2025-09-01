@@ -267,3 +267,28 @@ Esta aula consistiu em uma revisão prática e aprofundada do padrão **Singleto
 ### Novo Desafio: O Padrão Observer
 * A próxima tarefa para a turma é implementar o padrão de projeto **Observer** de forma autônoma.
 * O objetivo é praticar a habilidade de analisar um diagrama UML de um padrão e traduzir sua estrutura e lógica para código funcional.
+
+# Aula 8- 25/08/2025
+
+A aula foi focada na implementação do padrão **Observer** a partir de seu diagrama UML, seguida por uma introdução ao padrão **Adapter**.
+
+## Tópicos Principais
+
+### Padrão Comportamental: Observer (Publisher-Subscriber)
+* **Intenção:** Definir uma relação de dependência um-para-muitos, onde múltiplos objetos `Subscribers` são notificados sobre qualquer mudança de estado que ocorra em um objeto `Publisher`.
+* **Analogia:** Um grupo de WhatsApp, onde o grupo é o `Publisher` e os participantes são os `Subscribers`.
+
+* **Estrutura da Implementação:**
+    * **`Subscriber` (Interface):** Define o contrato com um método `update()`, que será chamado para notificar o assinante.
+    * **`ConcreteSubscriber` (Classe Concreta):** Implementa a interface `Subscriber` e define a ação a ser executada ao receber a notificação.
+    * **`Publisher` (Classe Concreta):**
+        * Mantém uma `List<Subscriber>` para registrar todos os assinantes. O uso da interface na lista promove baixo acoplamento.
+        * Método `subscribe()`: Adiciona um novo assinante à lista.
+        * Método `notifySubscribers()`: Percorre a lista de assinantes e invoca o método `update()` de cada um.
+    * **`Cliente`:** Orquestra o cenário, criando o publicador, os assinantes, registrando-os e disparando a notificação.
+
+---
+
+### Introdução ao Padrão Estrutural: Adapter
+* **Intenção:** Atua como um "tradutor" que permite a colaboração entre objetos com interfaces incompatíveis.
+* **Exemplo Moderno:** Um **API Gateway** pode funcionar como um Adapter, convertendo requisições de um formato (ex: XML) para outro (ex: JSON) para integrar sistemas legados com APIs modernas. **Kong** foi mencionado como um exemplo de tecnologia que implementa este padrão.
