@@ -318,3 +318,33 @@ Esta aula iniciou uma nova fase da disciplina, movendo o foco do nível do códi
     * **Decisão:** Usar microsserviços.
     * **Característica:** Baixo acoplamento.
     * **Princípio de Design:** Para manter o baixo acoplamento, os microsserviços não devem compartilhar o mesmo banco de dados. Em vez disso, devem usar **comunicação assíncrona** (um sistema de mensagens, aplicando o padrão Observer em nível de arquitetura), onde um serviço publica um evento e outros o consomem de forma independente.
+
+# Aula 10- 01/09/2025
+
+A aula abordou as expectativas sobre o papel do arquiteto de software e introduziu o conceito fundamental de DevOps, após uma breve revisão dos três pilares da arquitetura.
+
+## Tópicos Principais
+
+### Revisão dos Pilares da Arquitetura
+* **Características:** São os requisitos não funcionais (segurança, desempenho, etc.). Exigem *trade-offs*, pois é impossível otimizar todos ao mesmo tempo.
+* **Decisões:** A escolha do estilo arquitetural (monólito, microsserviços) e das tecnologias.
+* **Princípios:** As regras que garantem a integridade da arquitetura escolhida ao longo do tempo.
+
+---
+
+### O Papel do Arquiteto de Software
+* **Responsabilidades:** O arquiteto é responsável por tomar as decisões tecnológicas difíceis, analisar continuamente a arquitetura para mantê-la relevante, e orientar a equipe de desenvolvimento.
+* **Habilidades:** Além do conhecimento técnico, precisa ter uma boa visão de negócio para traduzir requisitos em soluções, e habilidades interpessoais para liderar, negociar e trabalhar em equipe.
+
+---
+
+### Introdução ao DevOps
+* **Objetivo:** Uma filosofia e prática para **entregar valor ao cliente** de forma mais rápida e eficiente, unindo desenvolvimento (Dev) e operações (Ops).
+* **Cultura vs. Cargo:** Pode ser uma **cultura**, onde toda a equipe é responsável pelo ciclo completo, ou um **cargo/equipe** especializada que gerencia a automação e a infraestrutura.
+* **O Ciclo Infinito:** DevOps opera em um ciclo contínuo:
+    * **Plan:** Planejar o trabalho.
+    * **Code:** Desenvolver.
+    * **Integrate (CI):** Integrar o código em um repositório central e testar automaticamente.
+    * **Deploy (CD):** Implantar a aplicação de forma automatizada.
+    * **Operate:** Monitorar a aplicação em produção.
+    * **Feedback:** Coletar informações para o próximo ciclo de planejamento.
